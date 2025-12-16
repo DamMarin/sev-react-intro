@@ -4,7 +4,9 @@
 // import ArrowFunctionalComponentWithProps from "./components/ArrowFunctionalComponentWithProps.tsx";
 // import Card from "./components/Card.tsx";
 import Layout from "./components/layout/Layout.tsx";
-import Counter from "./components/Counter.tsx";
+// import Counter from "./components/Counter.tsx";
+// import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
+import CounterAdvanced from "./components/CounterAdvanced.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -32,7 +34,9 @@ function App() {
       {/*    <FunctionalComponent />*/}
       {/*  </main>*/}
 
-        <Counter />
+        {/*<Counter />*/}
+        {/*<CounterWithMoreStates />*/}
+        <CounterAdvanced />
 
       </Layout>
     </>
