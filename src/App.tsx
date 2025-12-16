@@ -7,7 +7,8 @@ import Layout from "./components/layout/Layout.tsx";
 // import Counter from "./components/Counter.tsx";
 // import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
 // import CounterAdvanced from "./components/CounterAdvanced.tsx";
-import NameChanger from "./components/NameChanger.tsx";
+// import NameChanger from "./components/NameChanger.tsx";
+import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -38,8 +39,8 @@ function App() {
         {/*<Counter />*/}
         {/*<CounterWithMoreStates />*/}
         {/*<CounterAdvanced />*/}
-        <NameChanger />
-
+        {/*<NameChanger />*/}
+        <CounterWithCustomHook />
 
       </Layout>
     </>
