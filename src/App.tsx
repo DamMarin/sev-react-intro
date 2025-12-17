@@ -13,7 +13,8 @@ import Layout from "./components/layout/Layout.tsx";
 // import NameChangerWithUseEffect from "./components/NameChangerWithUseEffect.tsx";
 // import WindowSize from "./components/WindowSize.tsx";
 // import Timer from "./components/Timer.tsx";
-import CountDown from "./components/CountDown.tsx";
+// import CountDown from "./components/CountDown.tsx";
+import FocusInput from "./components/FocusInput.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -74,7 +75,8 @@ function App() {
         {/*<NameChangerWithUseEffect />*/}
         {/*<WindowSize />*/}
         {/*<Timer />*/}
-        <CountDown />
+        {/*<CountDown />*/}
+        <FocusInput />
 
       </Layout>
     </>
