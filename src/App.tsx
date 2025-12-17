@@ -12,7 +12,8 @@ import Layout from "./components/layout/Layout.tsx";
 // import {useEffect} from "react";
 // import NameChangerWithUseEffect from "./components/NameChangerWithUseEffect.tsx";
 // import WindowSize from "./components/WindowSize.tsx";
-import Timer from "./components/Timer.tsx";
+// import Timer from "./components/Timer.tsx";
+import CountDown from "./components/CountDown.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -72,7 +73,8 @@ function App() {
 
         {/*<NameChangerWithUseEffect />*/}
         {/*<WindowSize />*/}
-        <Timer />
+        {/*<Timer />*/}
+        <CountDown />
 
       </Layout>
     </>
