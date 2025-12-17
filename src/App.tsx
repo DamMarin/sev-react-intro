@@ -8,10 +8,27 @@ import Layout from "./components/layout/Layout.tsx";
 // import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
 // import CounterAdvanced from "./components/CounterAdvanced.tsx";
 // import NameChanger from "./components/NameChanger.tsx";
-import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
+// import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
+// import {useEffect} from "react";
+import NameChangerWithUseEffect from "./components/NameChangerWithUseEffect.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
+
+  // useEffect(setup, [deps]);
+  // useEffect(setup, []);
+  // useEffect(setup)
+  // useEffect(() => {
+  //   console.log("App mounted 0");
+  // }, [dep1, dep2]);
+  //
+  // useEffect(() => {
+  //   console.log("App mounted 1");
+  // }, []); //θα τρέξει μόνο μια φορά όταν το component φορτώνει
+  //
+  // useEffect(() => {
+  //   console.log("App mounted 2");
+  // });
 
   return (
     <>
@@ -40,7 +57,9 @@ function App() {
         {/*<CounterWithMoreStates />*/}
         {/*<CounterAdvanced />*/}
         {/*<NameChanger />*/}
-        <CounterWithCustomHook />
+        {/*<CounterWithCustomHook />*/}
+
+        <NameChangerWithUseEffect />
 
       </Layout>
     </>
