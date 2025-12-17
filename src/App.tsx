@@ -10,7 +10,8 @@ import Layout from "./components/layout/Layout.tsx";
 // import NameChanger from "./components/NameChanger.tsx";
 // import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
 // import {useEffect} from "react";
-import NameChangerWithUseEffect from "./components/NameChangerWithUseEffect.tsx";
+// import NameChangerWithUseEffect from "./components/NameChangerWithUseEffect.tsx";
+import WindowSize from "./components/WindowSize.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -29,6 +30,15 @@ function App() {
   // useEffect(() => {
   //   console.log("App mounted 2");
   // });
+  // useEffect(() => {
+  //   //setup (runs side-effect)
+  //   console.log("App mounted");
+  //   return () => {
+  //     // cleanup (clean up side-effect)
+  //     console.log("Cleanup");
+  //   }
+  // }, []);
+
 
   return (
     <>
@@ -59,7 +69,8 @@ function App() {
         {/*<NameChanger />*/}
         {/*<CounterWithCustomHook />*/}
 
-        <NameChangerWithUseEffect />
+        {/*<NameChangerWithUseEffect />*/}
+        <WindowSize />
 
       </Layout>
     </>
