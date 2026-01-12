@@ -1,4 +1,4 @@
-import Layout from "./components/layout/Layout.tsx";
+// import Layout from "./components/layout/Layout.tsx";
 // import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ArrowFunctionalComponent from "./components/ArrowFunctionalComponent.tsx";
 // import ClassComponent from "./components/ClassComponent.tsx";
@@ -17,6 +17,14 @@ import Layout from "./components/layout/Layout.tsx";
 // import FocusInput from "./components/FocusInput.tsx";
 // import CounterWithRef from "./components/CounterWithRef.tsx";
 import PreviousValue from "./components/PreviousValue.tsx";
+// import {useEffect} from "react";
+import {BrowserRouter, Route, Routes} from "react-router";
+import HomePage from "./pages/HomePage.tsx";
+import NameChanger from "./components/NameChanger.tsx";
+import UserPage from "./pages/UserPage.tsx";
+import SearchPage from "./pages/SearchPage.tsx";
+import NotFoundPage from "./pages/NotFoundPage.tsx";
+import RouterLayout from "./components/layout/RouterLayout.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -44,10 +52,24 @@ function App() {
   //   }
   // }, []);
 
+  // useEffect(() => {
+  //   history.pushState({page:1}, "", "/page");
+  //
+  //   history.replaceState({page:2}, "", "/page2");
+  //
+  //   window.onpopstate = (event) => {
+  //     console.log("popstate: ", event.state);
+  //   }
+  // }, []);
+
+
+
+
+
 
   return (
     <>
-      <Layout>
+      {/*<Layout>*/}
 
         {/*<FunctionalComponent />*/}
         {/*<ArrowFunctionalComponent />*/}
@@ -80,9 +102,44 @@ function App() {
         {/*<CountDown />*/}
         {/*<FocusInput />*/}
         {/*<CounterWithRef />*/}
-        <PreviousValue />
+        {/*<PreviousValue />*/}
 
-      </Layout>
+      {/*</Layout>*/}
+
+      <BrowserRouter>
+        <Routes>
+
+          <Route element={<RouterLayout/>}>
+
+            {/*<Route path="/" element={<HomePage />} />*/}
+            <Route index element={<HomePage />} />
+
+            {/*<Route path="examples/name-changer" element={<NameChanger />} />*/}
+            {/*<Route path="examples/previous-value" element={<PreviousValue />} />*/}
+            <Route path="examples">
+              <Route index element={<HomePage/>}/>
+              <Route path="name-changer" element={<NameChanger />} />
+              <Route path="previous-value" element={<PreviousValue />} />
+            </Route>
+
+            <Route path="optional?/name-changer" element={<NameChanger />} />
+            {/*<Route path="files/*" element={<File/>}/> /!* catch all *!/*/}
+
+            <Route path="users/:userId" element={<UserPage />} /> {/* id =15 -> /users/15 */}
+            <Route path="search" element={<SearchPage />} />
+            {/*  https://www.skroutz.gr/c/40/kinhta-thlefwna.html */}
+            {/* <Route path="c/:categoryId/:categorySlug" element={<CategoryPage/>} />*/}
+
+          </Route>
+
+          <Route path="*" element={<NotFoundPage/>}/> {/* catch all */}
+
+        </Routes>
+      </BrowserRouter>
+
+      {/*// /examples/name-changer*/}
+      {/*// /examples/previous-value*/}
+
     </>
   )
 }
