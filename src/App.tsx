@@ -25,6 +25,7 @@ import UserPage from "./pages/UserPage.tsx";
 import SearchPage from "./pages/SearchPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import RouterLayout from "./components/layout/RouterLayout.tsx";
+import MultiFieldForm from "./components/MultiFieldForm.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -120,6 +121,7 @@ function App() {
               <Route index element={<HomePage/>}/>
               <Route path="name-changer" element={<NameChanger />} />
               <Route path="previous-value" element={<PreviousValue />} />
+              <Route path="multi-field-form" element={<MultiFieldForm />} />
             </Route>
 
             <Route path="optional?/name-changer" element={<NameChanger />} />

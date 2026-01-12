@@ -6,8 +6,8 @@ const Homepage  = () => {
     { path: '/', label: 'Home Page' },
     { path: '/examples/name-changer', label: 'Name Changer' },
     { path: '/examples/previous-value', label: 'Previous Value' },
+    { path: '/examples/multi-field-form', label: 'MultiField Form' },
   ];
-
 
   return (
     <>
