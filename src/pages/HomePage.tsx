@@ -9,6 +9,7 @@ const Homepage  = () => {
     { path: '/examples/multi-field-form', label: 'MultiField Form' },
     { path: '/examples/multi-field-form-with-validation', label: 'MultiField Form With Validation' },
     { path: '/examples/multi-field-form-with-zod', label: 'MultiField Form With Zod' },
+    { path: '/examples/multi-field-form-with-hook-form', label: 'MultiField Form With Hook Form' },
   ];
 
   return (
