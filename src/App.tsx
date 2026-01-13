@@ -27,6 +27,7 @@ import NotFoundPage from "./pages/NotFoundPage.tsx";
 import RouterLayout from "./components/layout/RouterLayout.tsx";
 import MultiFieldForm from "./components/MultiFieldForm.tsx";
 import MultiFieldFormWithValidation from "./components/MultiFieldFormWithValidation.tsx";
+import MultiFieldFormWithZod from "./components/MultiFieldFormWithZod.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -124,6 +125,7 @@ function App() {
               <Route path="previous-value" element={<PreviousValue />} />
               <Route path="multi-field-form" element={<MultiFieldForm />} />
               <Route path="multi-field-form-with-validation" element={<MultiFieldFormWithValidation />} />
+              <Route path="multi-field-form-with-zod" element={<MultiFieldFormWithZod />} />
             </Route>
 
             <Route path="optional?/name-changer" element={<NameChanger />} />

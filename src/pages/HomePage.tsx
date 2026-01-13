@@ -8,6 +8,7 @@ const Homepage  = () => {
     { path: '/examples/previous-value', label: 'Previous Value' },
     { path: '/examples/multi-field-form', label: 'MultiField Form' },
     { path: '/examples/multi-field-form-with-validation', label: 'MultiField Form With Validation' },
+    { path: '/examples/multi-field-form-with-zod', label: 'MultiField Form With Zod' },
   ];
 
   return (
