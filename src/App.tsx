@@ -16,19 +16,20 @@
 // import CountDown from "./components/CountDown.tsx";
 // import FocusInput from "./components/FocusInput.tsx";
 // import CounterWithRef from "./components/CounterWithRef.tsx";
-import PreviousValue from "./components/PreviousValue.tsx";
+// import PreviousValue from "./components/PreviousValue.tsx";
 // import {useEffect} from "react";
 import {BrowserRouter, Route, Routes} from "react-router";
-import HomePage from "./pages/HomePage.tsx";
-import NameChanger from "./components/NameChanger.tsx";
-import UserPage from "./pages/UserPage.tsx";
-import SearchPage from "./pages/SearchPage.tsx";
+// import HomePage from "./pages/HomePage.tsx";
+// import NameChanger from "./components/NameChanger.tsx";
+// import UserPage from "./pages/UserPage.tsx";
+// import SearchPage from "./pages/SearchPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import RouterLayout from "./components/layout/RouterLayout.tsx";
-import MultiFieldForm from "./components/MultiFieldForm.tsx";
-import MultiFieldFormWithValidation from "./components/MultiFieldFormWithValidation.tsx";
-import MultiFieldFormWithZod from "./components/MultiFieldFormWithZod.tsx";
-import MultiFieldFormWithHookForm from "./components/MultiFieldFormWithHookForm.tsx";
+import ProductListPage from "@/pages/ProductListPage.tsx";
+// import MultiFieldForm from "./components/MultiFieldForm.tsx";
+// import MultiFieldFormWithValidation from "./components/MultiFieldFormWithValidation.tsx";
+// import MultiFieldFormWithZod from "./components/MultiFieldFormWithZod.tsx";
+// import MultiFieldFormWithHookForm from "./components/MultiFieldFormWithHookForm.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -113,41 +114,42 @@ function App() {
       <BrowserRouter>
         <Routes>
 
-          <Route element={<RouterLayout/>}>
-
+          {/*<Route element={<RouterLayout/>}>*/}
             {/*<Route path="/" element={<HomePage />} />*/}
-            <Route index element={<HomePage />} />
-
+            {/*<Route index element={<HomePage />} />*/}
             {/*<Route path="examples/name-changer" element={<NameChanger />} />*/}
             {/*<Route path="examples/previous-value" element={<PreviousValue />} />*/}
-            <Route path="examples">
-              <Route index element={<HomePage/>}/>
-              <Route path="name-changer" element={<NameChanger />} />
-              <Route path="previous-value" element={<PreviousValue />} />
-              <Route path="multi-field-form" element={<MultiFieldForm />} />
-              <Route path="multi-field-form-with-validation" element={<MultiFieldFormWithValidation />} />
-              <Route path="multi-field-form-with-zod" element={<MultiFieldFormWithZod />} />
-              <Route path="multi-field-form-with-hook-form" element={<MultiFieldFormWithHookForm />} />
-            </Route>
+            {/*<Route path="examples">*/}
+            {/*  <Route index element={<HomePage/>}/>*/}
+            {/*  <Route path="name-changer" element={<NameChanger />} />*/}
+            {/*  <Route path="previous-value" element={<PreviousValue />} />*/}
+            {/*  <Route path="multi-field-form" element={<MultiFieldForm />} />*/}
+            {/*  <Route path="multi-field-form-with-validation" element={<MultiFieldFormWithValidation />} />*/}
+            {/*  <Route path="multi-field-form-with-zod" element={<MultiFieldFormWithZod />} />*/}
+            {/*  <Route path="multi-field-form-with-hook-form" element={<MultiFieldFormWithHookForm />} />*/}
+            {/*</Route>*/}
 
-            <Route path="optional?/name-changer" element={<NameChanger />} />
+            {/*<Route path="optional?/name-changer" element={<NameChanger />} />*/}
             {/*<Route path="files/*" element={<File/>}/> /!* catch all *!/*/}
 
-            <Route path="users/:userId" element={<UserPage />} /> {/* id =15 -> /users/15 */}
-            <Route path="search" element={<SearchPage />} />
+            {/*<Route path="users/:userId" element={<UserPage />} /> /!* id =15 -> /users/15 *!/*/}
+            {/*<Route path="search" element={<SearchPage />} />*/}
             {/*  https://www.skroutz.gr/c/40/kinhta-thlefwna.html */}
             {/* <Route path="c/:categoryId/:categorySlug" element={<CategoryPage/>} />*/}
+          {/*</Route>*/}
 
+          <Route element={<RouterLayout/>}>
+            <Route path={"products"}>
+              <Route index element={<ProductListPage/>}/>
+              {/*<Route path={":productId"} element={<ProductPage/>}/>*/}
+              {/*<Route path={"new"} element={<ProductPage/>}/>*/}
+            </Route>
           </Route>
 
           <Route path="*" element={<NotFoundPage/>}/> {/* catch all */}
 
         </Routes>
       </BrowserRouter>
-
-      {/*// /examples/name-changer*/}
-      {/*// /examples/previous-value*/}
-
     </>
   )
 }
