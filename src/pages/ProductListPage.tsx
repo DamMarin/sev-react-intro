@@ -16,6 +16,7 @@ import {Pencil, Trash2} from "lucide-react";
 
 const ProductListPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -26,8 +27,13 @@ const ProductListPage = () => {
   useEffect(() => {
     getProducts()
       .then((data) => setProducts(data))
+      .finally(() => setLoading(false));
     // console.log(products);
   }, []);
+
+  if (loading) {
+    return <div className="p-8">Loading...</div>;
+  }
 
   return (
     <>
