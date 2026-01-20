@@ -39,3 +39,10 @@ export async function updateProduct(data: Partial<Product>, id: number): Promise
   if (!res.ok) throw new Error("Failed to update product");
   return await res.json();
 }
+
+export async function deleteProduct(id: number): Promise<void> {
+  const res = await fetch(`${API_URL}/tenants/${TENANT_ID}/products/${id}`, {
+    method: "DELETE"
+  });
+  if (!res.ok) throw new Error("Failed to delete product");
+}
