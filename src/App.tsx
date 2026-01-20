@@ -26,6 +26,8 @@ import {BrowserRouter, Route, Routes} from "react-router";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import RouterLayout from "./components/layout/RouterLayout.tsx";
 import ProductListPage from "@/pages/ProductListPage.tsx";
+import ProductPage from "@/pages/ProductPage.tsx";
+import {Toaster} from "sonner";
 // import MultiFieldForm from "./components/MultiFieldForm.tsx";
 // import MultiFieldFormWithValidation from "./components/MultiFieldFormWithValidation.tsx";
 // import MultiFieldFormWithZod from "./components/MultiFieldFormWithZod.tsx";
@@ -141,8 +143,8 @@ function App() {
           <Route element={<RouterLayout/>}>
             <Route path={"products"}>
               <Route index element={<ProductListPage/>}/>
-              {/*<Route path={":productId"} element={<ProductPage/>}/>*/}
-              {/*<Route path={"new"} element={<ProductPage/>}/>*/}
+              <Route path={":productId"} element={<ProductPage/>}/>
+              <Route path={"new"} element={<ProductPage/>}/>
             </Route>
           </Route>
 
@@ -150,6 +152,7 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+      <Toaster richColors />
     </>
   )
 }
