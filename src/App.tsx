@@ -28,10 +28,14 @@ import RouterLayout from "./components/layout/RouterLayout.tsx";
 import ProductListPage from "@/pages/ProductListPage.tsx";
 import ProductPage from "@/pages/ProductPage.tsx";
 import {Toaster} from "sonner";
+import LoginPage from "@/pages/LoginPage.tsx";
+import {AuthProvider} from "@/context/AuthProvider.tsx";
 // import MultiFieldForm from "./components/MultiFieldForm.tsx";
 // import MultiFieldFormWithValidation from "./components/MultiFieldFormWithValidation.tsx";
 // import MultiFieldFormWithZod from "./components/MultiFieldFormWithZod.tsx";
 // import MultiFieldFormWithHookForm from "./components/MultiFieldFormWithHookForm.tsx";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import HomePage from "@/pages/HomePage.tsx";
 
 function App() {
   // const title = "Is an Arrow Functional Component!";
@@ -112,47 +116,50 @@ function App() {
         {/*<PreviousValue />*/}
 
       {/*</Layout>*/}
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
 
-      <BrowserRouter>
-        <Routes>
+            {/*<Route element={<RouterLayout/>}>*/}
+              {/*<Route path="/" element={<HomePage />} />*/}
+              {/*<Route index element={<HomePage />} />*/}
+              {/*<Route path="examples/name-changer" element={<NameChanger />} />*/}
+              {/*<Route path="examples/previous-value" element={<PreviousValue />} />*/}
+              {/*<Route path="examples">*/}
+              {/*  <Route index element={<HomePage/>}/>*/}
+              {/*  <Route path="name-changer" element={<NameChanger />} />*/}
+              {/*  <Route path="previous-value" element={<PreviousValue />} />*/}
+              {/*  <Route path="multi-field-form" element={<MultiFieldForm />} />*/}
+              {/*  <Route path="multi-field-form-with-validation" element={<MultiFieldFormWithValidation />} />*/}
+              {/*  <Route path="multi-field-form-with-zod" element={<MultiFieldFormWithZod />} />*/}
+              {/*  <Route path="multi-field-form-with-hook-form" element={<MultiFieldFormWithHookForm />} />*/}
+              {/*</Route>*/}
 
-          {/*<Route element={<RouterLayout/>}>*/}
-            {/*<Route path="/" element={<HomePage />} />*/}
-            {/*<Route index element={<HomePage />} />*/}
-            {/*<Route path="examples/name-changer" element={<NameChanger />} />*/}
-            {/*<Route path="examples/previous-value" element={<PreviousValue />} />*/}
-            {/*<Route path="examples">*/}
-            {/*  <Route index element={<HomePage/>}/>*/}
-            {/*  <Route path="name-changer" element={<NameChanger />} />*/}
-            {/*  <Route path="previous-value" element={<PreviousValue />} />*/}
-            {/*  <Route path="multi-field-form" element={<MultiFieldForm />} />*/}
-            {/*  <Route path="multi-field-form-with-validation" element={<MultiFieldFormWithValidation />} />*/}
-            {/*  <Route path="multi-field-form-with-zod" element={<MultiFieldFormWithZod />} />*/}
-            {/*  <Route path="multi-field-form-with-hook-form" element={<MultiFieldFormWithHookForm />} />*/}
+              {/*<Route path="optional?/name-changer" element={<NameChanger />} />*/}
+              {/*<Route path="files/*" element={<File/>}/> /!* catch all *!/*/}
+
+              {/*<Route path="users/:userId" element={<UserPage />} /> /!* id =15 -> /users/15 *!/*/}
+              {/*<Route path="search" element={<SearchPage />} />*/}
+              {/*  https://www.skroutz.gr/c/40/kinhta-thlefwna.html */}
+              {/* <Route path="c/:categoryId/:categorySlug" element={<CategoryPage/>} />*/}
             {/*</Route>*/}
 
-            {/*<Route path="optional?/name-changer" element={<NameChanger />} />*/}
-            {/*<Route path="files/*" element={<File/>}/> /!* catch all *!/*/}
-
-            {/*<Route path="users/:userId" element={<UserPage />} /> /!* id =15 -> /users/15 *!/*/}
-            {/*<Route path="search" element={<SearchPage />} />*/}
-            {/*  https://www.skroutz.gr/c/40/kinhta-thlefwna.html */}
-            {/* <Route path="c/:categoryId/:categorySlug" element={<CategoryPage/>} />*/}
-          {/*</Route>*/}
-
-          <Route element={<RouterLayout/>}>
-            <Route path={"products"}>
-              <Route index element={<ProductListPage/>}/>
-              <Route path={":productId"} element={<ProductPage/>}/>
-              <Route path={"new"} element={<ProductPage/>}/>
+            <Route element={<RouterLayout/>}>
+              <Route path="/" element={<HomePage />}/>
+              <Route path="login" element={<LoginPage/>}/>
+              <Route path={"products"} element={<ProtectedRoute />}>
+                <Route index element={<ProductListPage/>}/>
+                <Route path={":productId"} element={<ProductPage/>}/>
+                <Route path={"new"} element={<ProductPage/>}/>
+              </Route>
             </Route>
-          </Route>
 
-          <Route path="*" element={<NotFoundPage/>}/> {/* catch all */}
+              <Route path="*" element={<NotFoundPage/>}/> {/* catch all */}
 
-        </Routes>
-      </BrowserRouter>
-      <Toaster richColors />
+            </Routes>
+          </BrowserRouter>
+          <Toaster richColors />
+      </AuthProvider>
     </>
   )
 }

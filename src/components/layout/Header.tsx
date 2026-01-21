@@ -1,3 +1,6 @@
+import {Link} from "react-router";
+import {AuthButton} from "@/components/AuthButton.tsx";
+
 const Header = () => {
   return (
     <>
@@ -8,7 +11,8 @@ const Header = () => {
             src="https://codingfactory.aueb.gr/sites/all/themes/cf_theme/logo.png"
             alt="CF Logo"/>
           <nav className="text-white font-medium">
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
+            <AuthButton />
           </nav>
         </div>
       </header>
